@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D54217B4-A90F-4A5B-9D28-0CDB9C1B7C4B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cs1400Final</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="aaa.h" />
+    <ClInclude Include="abb.h" />
+    <ClInclude Include="adc.h" />
+    <ClInclude Include="adi.h" />
+    <ClInclude Include="adn.h" />
+    <ClInclude Include="aia.h" />
+    <ClInclude Include="akf.h" />
+    <ClInclude Include="all.h" />
+    <ClInclude Include="alp.h" />
+    <ClInclude Include="alt.h" />
+    <ClInclude Include="amo.h" />
+    <ClInclude Include="aqa.h" />
+    <ClInclude Include="ark.h" />
+    <ClInclude Include="asd.h" />
+    <ClInclude Include="asn.h" />
+    <ClInclude Include="avb.h" />
+    <ClInclude Include="bac.h" />
+    <ClInclude Include="bbq.h" />
+    <ClInclude Include="ben.h" />
+    <ClInclude Include="blk.h" />
+    <ClInclude Include="bob.h" />
+    <ClInclude Include="boo.h" />
+    <ClInclude Include="bos.h" />
+    <ClInclude Include="bot.h" />
+    <ClInclude Include="bri.h" />
+    <ClInclude Include="brn.h" />
+    <ClInclude Include="bro.h" />
+    <ClInclude Include="bug.h" />
+    <ClInclude Include="bwc.h" />
+    <ClInclude Include="car.h" />
+    <ClInclude Include="cdg.h" />
+    <ClInclude Include="cdy.h" />
+    <ClInclude Include="cjk.h" />
+    <ClInclude Include="cjt.h" />
+    <ClInclude Include="ckc.h" />
+    <ClInclude Include="clg.h" />
+    <ClInclude Include="cls.h" />
+    <ClInclude Include="clu.h" />
+    <ClInclude Include="cmd.h" />
+    <ClInclude Include="cow.h" />
+    <ClInclude Include="cra.h" />
+    <ClInclude Include="crb.h" />
+    <ClInclude Include="crd.h" />
+    <ClInclude Include="csq.h" />
+    <ClInclude Include="ctu.h" />
+    <ClInclude Include="cwc.h" />
+    <ClInclude Include="cze.h" />
+    <ClInclude Include="dfv.h" />
+    <ClInclude Include="die.h" />
+    <ClInclude Include="dih.h" />
+    <ClInclude Include="dkb.h" />
+    <ClInclude Include="dl8.h" />
+    <ClInclude Include="dlr.h" />
+    <ClInclude Include="dlt.h" />
+    <ClInclude Include="dmr.h" />
+    <ClInclude Include="dnd.h" />
+    <ClInclude Include="doh.h" />
+    <ClInclude Include="dos.h" />
+    <ClInclude Include="drb.h" />
+    <ClInclude Include="drc.h" />
+    <ClInclude Include="dre.h" />
+    <ClInclude Include="drw.h" />
+    <ClInclude Include="dsc.h" />
+    <ClInclude Include="dss.h" />
+    <ClInclude Include="dww.h" />
+    <ClInclude Include="dxv.h" />
+    <ClInclude Include="edb.h" />
+    <ClInclude Include="eds.h" />
+    <ClInclude Include="emj.h" />
+    <ClInclude Include="eob.h" />
+    <ClInclude Include="fed.h" />
+    <ClInclude Include="frp.h" />
+    <ClInclude Include="god.h" />
+    <ClInclude Include="gst.h" />
+    <ClInclude Include="gwh.h" />
+    <ClInclude Include="ham.h" />
+    <ClInclude Include="hlz.h" />
+    <ClInclude Include="hoe.h" />
+    <ClInclude Include="hsa.h" />
+    <ClInclude Include="hug.h" />
+    <ClInclude Include="ian.h" />
+    <ClInclude Include="icl.h" />
+    <ClInclude Include="icm.h" />
+    <ClInclude Include="ike.h" />
+    <ClInclude Include="ipm.h" />
+    <ClInclude Include="jac.h" />
+    <ClInclude Include="jax.h" />
+    <ClInclude Include="jaz.h" />
+    <ClInclude Include="jbp.h" />
+    <ClInclude Include="jcd.h" />
+    <ClInclude Include="jcl.h" />
+    <ClInclude Include="jdd.h" />
+    <ClInclude Include="jds.h" />
+    <ClInclude Include="jej.h" />
+    <ClInclude Include="jen.h" />
+    <ClInclude Include="jfr.h" />
+    <ClInclude Include="jgb.h" />
+    <ClInclude Include="jjc.h" />
+    <ClInclude Include="jmf.h" />
+    <ClInclude Include="jmh.h" />
+    <ClInclude Include="jms.h" />
+    <ClInclude Include="jmt.h" />
+    <ClInclude Include="jon.h" />
+    <ClInclude Include="jps.h" />
+    <ClInclude Include="jrp.h" />
+    <ClInclude Include="jrw.h" />
+    <ClInclude Include="jta.h" />
+    <ClInclude Include="jtb.h" />
+    <ClInclude Include="jtg.h" />
+    <ClInclude Include="jwl.h" />
+    <ClInclude Include="kac.h" />
+    <ClInclude Include="kdf.h" />
+    <ClInclude Include="kfc.h" />
+    <ClInclude Include="kgb.h" />
+    <ClInclude Include="kjh.h" />
+    <ClInclude Include="kjs.h" />
+    <ClInclude Include="klb.h" />
+    <ClInclude Include="klh.h" />
+    <ClInclude Include="knk.h" />
+    <ClInclude Include="krg.h" />
+    <ClInclude Include="lam.h" />
+    <ClInclude Include="lav.h" />
+    <ClInclude Include="lea.h" />
+    <ClInclude Include="lel.h" />
+    <ClInclude Include="lhm.h" />
+    <ClInclude Include="lia.h" />
+    <ClInclude Include="lionheart.h" />
+    <ClInclude Include="liv.h" />
+    <ClInclude Include="lmn.h" />
+    <ClInclude Include="lol.h" />
+    <ClInclude Include="loz.h" />
+    <ClInclude Include="lpc.h" />
+    <ClInclude Include="lsd.h" />
+    <ClInclude Include="m11.h" />
+    <ClInclude Include="maa.h" />
+    <ClInclude Include="mab.h" />
+    <ClInclude Include="mad.h" />
+    <ClInclude Include="mar.h" />
+    <ClInclude Include="med.h" />
+    <ClInclude Include="meh.h" />
+    <ClInclude Include="mjn.h" />
+    <ClInclude Include="mlg.h" />
+    <ClInclude Include="mlm.h" />
+    <ClInclude Include="mlp.h" />
+    <ClInclude Include="mmh.h" />
+    <ClInclude Include="mos.h" />
+    <ClInclude Include="mpf.h" />
+    <ClInclude Include="mrr.h" />
+    <ClInclude Include="msc.h" />
+    <ClInclude Include="msw.h" />
+    <ClInclude Include="mtc.h" />
+    <ClInclude Include="nac.h" />
+    <ClInclude Include="naw.h" />
+    <ClInclude Include="noo.h" />
+    <ClInclude Include="nva.h" />
+    <ClInclude Include="ork.h" />
+    <ClInclude Include="oss.h" />
+    <ClInclude Include="pez.h" />
+    <ClInclude Include="phx.h" />
+    <ClInclude Include="pig.h" />
+    <ClInclude Include="pim.h" />
+    <ClInclude Include="pld.h" />
+    <ClInclude Include="pox.h" />
+    <ClInclude Include="psg.h" />
+    <ClInclude Include="pts.h" />
+    <ClInclude Include="rar.h" />
+    <ClInclude Include="rdt.h" />
+    <ClInclude Include="rgw.h" />
+    <ClInclude Include="rha.h" />
+    <ClInclude Include="roa.h" />
+    <ClInclude Include="rob.h" />
+    <ClInclude Include="rsl.h" />
+    <ClInclude Include="rtb.h" />
+    <ClInclude Include="rur.h" />
+    <ClInclude Include="sah.h" />
+    <ClInclude Include="sd9.h" />
+    <ClInclude Include="sgj.h" />
+    <ClInclude Include="sjc.h" />
+    <ClInclude Include="slj.h" />
+    <ClInclude Include="sll.h" />
+    <ClInclude Include="sno.h" />
+    <ClInclude Include="spk.h" />
+    <ClInclude Include="sps.h" />
+    <ClInclude Include="sth.h" />
+    <ClInclude Include="tas.h" />
+    <ClInclude Include="tbb.h" />
+    <ClInclude Include="tcc.h" />
+    <ClInclude Include="tcg.h" />
+    <ClInclude Include="tdm.h" />
+    <ClInclude Include="tds.h" />
+    <ClInclude Include="tgf.h" />
+    <ClInclude Include="tgy.h" />
+    <ClInclude Include="the.h" />
+    <ClInclude Include="tkg.h" />
+    <ClInclude Include="tlp.h" />
+    <ClInclude Include="tom.h" />
+    <ClInclude Include="tpa.h" />
+    <ClInclude Include="tru.h" />
+    <ClInclude Include="tsm.h" />
+    <ClInclude Include="unit.h" />
+    <ClInclude Include="usa.h" />
+    <ClInclude Include="usm.h" />
+    <ClInclude Include="usu.h" />
+    <ClInclude Include="vga.h" />
+    <ClInclude Include="vs8.h" />
+    <ClInclude Include="wat.h" />
+    <ClInclude Include="win.h" />
+    <ClInclude Include="wmf.h" />
+    <ClInclude Include="wmj.h" />
+    <ClInclude Include="wnd.h" />
+    <ClInclude Include="wnw.h" />
+    <ClInclude Include="xcd.h" />
+    <ClInclude Include="xxx.h" />
+    <ClInclude Include="yak.h" />
+    <ClInclude Include="yep.h" />
+    <ClInclude Include="yhg.h" />
+    <ClInclude Include="zio.h" />
+    <ClInclude Include="zmk.h" />
+    <ClInclude Include="zrk.h" />
+    <ClInclude Include="zwh.h" />
+    <ClInclude Include="zzt.h" />
+    <ClInclude Include="zzz.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aaa.cpp" />
+    <ClCompile Include="abb.cpp" />
+    <ClCompile Include="adc.cpp" />
+    <ClCompile Include="adi.cpp" />
+    <ClCompile Include="adn.cpp" />
+    <ClCompile Include="aia.cpp" />
+    <ClCompile Include="akf.cpp" />
+    <ClCompile Include="all.cpp" />
+    <ClCompile Include="alp.cpp" />
+    <ClCompile Include="alt.cpp" />
+    <ClCompile Include="amo.cpp" />
+    <ClCompile Include="aqa.cpp" />
+    <ClCompile Include="ark.cpp" />
+    <ClCompile Include="asd.cpp" />
+    <ClCompile Include="asn.cpp" />
+    <ClCompile Include="avb.cpp" />
+    <ClCompile Include="bac.cpp" />
+    <ClCompile Include="bbq.cpp" />
+    <ClCompile Include="ben.cpp" />
+    <ClCompile Include="blk.cpp" />
+    <ClCompile Include="bob.cpp" />
+    <ClCompile Include="boo.cpp" />
+    <ClCompile Include="bos.cpp" />
+    <ClCompile Include="bot.cpp" />
+    <ClCompile Include="bri.cpp" />
+    <ClCompile Include="brn.cpp" />
+    <ClCompile Include="bro.cpp" />
+    <ClCompile Include="bug.cpp" />
+    <ClCompile Include="bwc.cpp" />
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="cdg.cpp" />
+    <ClCompile Include="cdy.cpp" />
+    <ClCompile Include="cjk.cpp" />
+    <ClCompile Include="cjt.cpp" />
+    <ClCompile Include="ckc.cpp" />
+    <ClCompile Include="clg.cpp" />
+    <ClCompile Include="cls.cpp" />
+    <ClCompile Include="clu.cpp" />
+    <ClCompile Include="cmd.cpp" />
+    <ClCompile Include="cow.cpp" />
+    <ClCompile Include="cra.cpp" />
+    <ClCompile Include="crb.cpp" />
+    <ClCompile Include="crd.cpp" />
+    <ClCompile Include="csq.cpp" />
+    <ClCompile Include="ctu.cpp" />
+    <ClCompile Include="cwc.cpp" />
+    <ClCompile Include="cze.cpp" />
+    <ClCompile Include="dfv.cpp" />
+    <ClCompile Include="die.cpp" />
+    <ClCompile Include="dih.cpp" />
+    <ClCompile Include="dkb.cpp" />
+    <ClCompile Include="dl8.cpp" />
+    <ClCompile Include="dlr.cpp" />
+    <ClCompile Include="dlt.cpp" />
+    <ClCompile Include="dmr.cpp" />
+    <ClCompile Include="dnd.cpp" />
+    <ClCompile Include="doh.cpp" />
+    <ClCompile Include="dos.cpp" />
+    <ClCompile Include="drb.cpp" />
+    <ClCompile Include="drc.cpp" />
+    <ClCompile Include="dre.cpp" />
+    <ClCompile Include="drw.cpp" />
+    <ClCompile Include="dsc.cpp" />
+    <ClCompile Include="dss.cpp" />
+    <ClCompile Include="dww.cpp" />
+    <ClCompile Include="dxv.cpp" />
+    <ClCompile Include="edb.cpp" />
+    <ClCompile Include="eds.cpp" />
+    <ClCompile Include="emj.cpp" />
+    <ClCompile Include="eob.cpp" />
+    <ClCompile Include="fed.cpp" />
+    <ClCompile Include="frp.cpp" />
+    <ClCompile Include="god.cpp" />
+    <ClCompile Include="gst.cpp" />
+    <ClCompile Include="gwh.cpp" />
+    <ClCompile Include="ham.cpp" />
+    <ClCompile Include="hlz.cpp" />
+    <ClCompile Include="hoe.cpp" />
+    <ClCompile Include="hsa.cpp" />
+    <ClCompile Include="hug.cpp" />
+    <ClCompile Include="ian.cpp" />
+    <ClCompile Include="icl.cpp" />
+    <ClCompile Include="icm.cpp" />
+    <ClCompile Include="ike.cpp" />
+    <ClCompile Include="ipm.cpp" />
+    <ClCompile Include="jac.cpp" />
+    <ClCompile Include="jax.cpp" />
+    <ClCompile Include="jaz.cpp" />
+    <ClCompile Include="jbp.cpp" />
+    <ClCompile Include="jcd.cpp" />
+    <ClCompile Include="jcl.cpp" />
+    <ClCompile Include="jdd.cpp" />
+    <ClCompile Include="jds.cpp" />
+    <ClCompile Include="jej.cpp" />
+    <ClCompile Include="jen.cpp" />
+    <ClCompile Include="jfr.cpp" />
+    <ClCompile Include="jgb.cpp" />
+    <ClCompile Include="jjc.cpp" />
+    <ClCompile Include="jmf.cpp" />
+    <ClCompile Include="jmh.cpp" />
+    <ClCompile Include="jms.cpp" />
+    <ClCompile Include="jmt.cpp" />
+    <ClCompile Include="jon.cpp" />
+    <ClCompile Include="jps.cpp" />
+    <ClCompile Include="jrp.cpp" />
+    <ClCompile Include="jrw.cpp" />
+    <ClCompile Include="jta.cpp" />
+    <ClCompile Include="jtb.cpp" />
+    <ClCompile Include="jtg.cpp" />
+    <ClCompile Include="jwl.cpp" />
+    <ClCompile Include="kac.cpp" />
+    <ClCompile Include="kdf.cpp" />
+    <ClCompile Include="kfc.cpp" />
+    <ClCompile Include="kgb.cpp" />
+    <ClCompile Include="kjh.cpp" />
+    <ClCompile Include="kjs.cpp" />
+    <ClCompile Include="klb.cpp" />
+    <ClCompile Include="klh.cpp" />
+    <ClCompile Include="knk.cpp" />
+    <ClCompile Include="krg.cpp" />
+    <ClCompile Include="lam.cpp" />
+    <ClCompile Include="lav.cpp" />
+    <ClCompile Include="lea.cpp" />
+    <ClCompile Include="lel.cpp" />
+    <ClCompile Include="lhm.cpp" />
+    <ClCompile Include="lia.cpp" />
+    <ClCompile Include="lionheart.cpp" />
+    <ClCompile Include="liv.cpp" />
+    <ClCompile Include="lmn.cpp" />
+    <ClCompile Include="lol.cpp" />
+    <ClCompile Include="loz.cpp" />
+    <ClCompile Include="lpc.cpp" />
+    <ClCompile Include="lsd.cpp" />
+    <ClCompile Include="m11.cpp" />
+    <ClCompile Include="maa.cpp" />
+    <ClCompile Include="mab.cpp" />
+    <ClCompile Include="mad.cpp" />
+    <ClCompile Include="mar.cpp" />
+    <ClCompile Include="med.cpp" />
+    <ClCompile Include="meh.cpp" />
+    <ClCompile Include="mjn.cpp" />
+    <ClCompile Include="mlg.cpp" />
+    <ClCompile Include="mlm.cpp" />
+    <ClCompile Include="mlp.cpp" />
+    <ClCompile Include="mmh.cpp" />
+    <ClCompile Include="mos.cpp" />
+    <ClCompile Include="mpf.cpp" />
+    <ClCompile Include="mrr.cpp" />
+    <ClCompile Include="msc.cpp" />
+    <ClCompile Include="msw.cpp" />
+    <ClCompile Include="mtc.cpp" />
+    <ClCompile Include="nac.cpp" />
+    <ClCompile Include="naw.cpp" />
+    <ClCompile Include="noo.cpp" />
+    <ClCompile Include="nva.cpp" />
+    <ClCompile Include="ork.cpp" />
+    <ClCompile Include="oss.cpp" />
+    <ClCompile Include="pez.cpp" />
+    <ClCompile Include="phx.cpp" />
+    <ClCompile Include="pig.cpp" />
+    <ClCompile Include="pim.cpp" />
+    <ClCompile Include="pld.cpp" />
+    <ClCompile Include="pox.cpp" />
+    <ClCompile Include="psg.cpp" />
+    <ClCompile Include="pts.cpp" />
+    <ClCompile Include="rar.cpp" />
+    <ClCompile Include="rdt.cpp" />
+    <ClCompile Include="rgw.cpp" />
+    <ClCompile Include="rha.cpp" />
+    <ClCompile Include="roa.cpp" />
+    <ClCompile Include="rob.cpp" />
+    <ClCompile Include="rsl.cpp" />
+    <ClCompile Include="rtb.cpp" />
+    <ClCompile Include="rur.cpp" />
+    <ClCompile Include="sah.cpp" />
+    <ClCompile Include="sd9.cpp" />
+    <ClCompile Include="sgj.cpp" />
+    <ClCompile Include="sjc.cpp" />
+    <ClCompile Include="slj.cpp" />
+    <ClCompile Include="sll.cpp" />
+    <ClCompile Include="sno.cpp" />
+    <ClCompile Include="spk.cpp" />
+    <ClCompile Include="sps.cpp" />
+    <ClCompile Include="sth.cpp" />
+    <ClCompile Include="tas.cpp" />
+    <ClCompile Include="tbb.cpp" />
+    <ClCompile Include="tcc.cpp" />
+    <ClCompile Include="tcg.cpp" />
+    <ClCompile Include="tdm.cpp" />
+    <ClCompile Include="tds.cpp" />
+    <ClCompile Include="tgf.cpp" />
+    <ClCompile Include="tgy.cpp" />
+    <ClCompile Include="the.cpp" />
+    <ClCompile Include="tkg.cpp" />
+    <ClCompile Include="tlp.cpp" />
+    <ClCompile Include="tom.cpp" />
+    <ClCompile Include="tpa.cpp" />
+    <ClCompile Include="tru.cpp" />
+    <ClCompile Include="tsm.cpp" />
+    <ClCompile Include="unit.cpp" />
+    <ClCompile Include="usa.cpp" />
+    <ClCompile Include="usm.cpp" />
+    <ClCompile Include="usu.cpp" />
+    <ClCompile Include="vga.cpp" />
+    <ClCompile Include="vs8.cpp" />
+    <ClCompile Include="wat.cpp" />
+    <ClCompile Include="win.cpp" />
+    <ClCompile Include="wmf.cpp" />
+    <ClCompile Include="wmj.cpp" />
+    <ClCompile Include="wnd.cpp" />
+    <ClCompile Include="wnw.cpp" />
+    <ClCompile Include="xcd.cpp" />
+    <ClCompile Include="xxx.cpp" />
+    <ClCompile Include="yak.cpp" />
+    <ClCompile Include="yep.cpp" />
+    <ClCompile Include="yhg.cpp" />
+    <ClCompile Include="zio.cpp" />
+    <ClCompile Include="zmk.cpp" />
+    <ClCompile Include="zrk.cpp" />
+    <ClCompile Include="zwh.cpp" />
+    <ClCompile Include="zzt.cpp" />
+    <ClCompile Include="zzz.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4player.in" />
+    <None Include="forts.in" />
+    <None Include="map.in" />
+    <None Include="map1.in" />
+    <None Include="map2.in" />
+    <None Include="map3.in" />
+    <None Include="map4.in" />
+    <None Include="map6.in" />
+    <None Include="navy.in" />
+    <None Include="sortedTlas" />
+    <None Include="srt2" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
