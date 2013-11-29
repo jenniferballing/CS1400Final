@@ -8,6 +8,8 @@
 
 using namespace std;
 
+enum sideOfBoard {bup, bdn, brt, blt};
+
 class jen : public Unit {
 public:
 	jen():Unit(){}
@@ -22,6 +24,12 @@ public:
 	// tell someone what you want to do
 
 private:
+	sideOfBoard findSide (int minR,int maxR,int minC,int maxC);
+	void upStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+	void dnStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+	void rtStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+	void ltStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+
 
 };
 #endif
