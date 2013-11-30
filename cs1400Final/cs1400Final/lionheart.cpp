@@ -637,8 +637,8 @@ void checkPlacement(Unit *u,Unit t,int minr,int maxr,int minc,int maxc){
 		cout << "error: "<<u->getTla()<<" bad placement. exiting.\n";
 		exit (6);
 	}
-        if(t.getHp()!=u->getHp()||t.getRank()!=u->getRank()
-           ||t.getDead()!=u->getDead()||t.getTla()!=u->getTla()){
+		if(t.getHp()!=u->getHp()||t.getRank()!=u->getRank()
+		   ||t.getDead()!=u->getDead()||t.getTla()!=u->getTla()){
 		cout << "error: "<<u->getTla()<<" performed illegal unit modification during placement. exiting.\n";
 		exit (7);
 	}
@@ -649,8 +649,8 @@ void checkPlacement(Unit *u,Unit t,int minr,int maxr,int minc,int maxc){
 void checkNoMods(Unit *u,Unit t){
 	int tr, tc;
 
-        if(t.getHp()!=u->getHp()||t.getDir()!=u->getDir()||t.getRank()!=u->getRank()
-           ||t.getDead()!=u->getDead()||t.getTla()!=u->getTla()
+		if(t.getHp()!=u->getHp()||t.getDir()!=u->getDir()||t.getRank()!=u->getRank()
+		   ||t.getDead()!=u->getDead()||t.getTla()!=u->getTla()
 	   ||t.getR()!=u->getR()||t.getC()!=u->getC()){
 		cout << "error: "<<u->getTla()<<" performed illegal unit modification during recommendation. exiting.\n";
 		exit (8);
@@ -780,16 +780,16 @@ void arrowSuffer(Unit *u[],int m,int ar,int ac,int hits){
 	int tc=u[m]->getC();
 
 	//find the box the archer can target
-       	switch(u[m]->getDir()){
-        case up: sr=tr-3;er=tr-1;sc=tc-1;ec=tc+1;break;
-        case dn: sr=tr+1;er=tr+3;sc=tc-1;ec=tc+1;break;
-        case lt: sr=tr-1;er=tr+1;sc=tc-3;ec=tc-1;break;
-        case rt: sr=tr-1;er=tr+1;sc=tc+1;ec=tc+3;break;
-        case none: return;
+		switch(u[m]->getDir()){
+		case up: sr=tr-3;er=tr-1;sc=tc-1;ec=tc+1;break;
+		case dn: sr=tr+1;er=tr+3;sc=tc-1;ec=tc+1;break;
+		case lt: sr=tr-1;er=tr+1;sc=tc-3;ec=tc-1;break;
+		case rt: sr=tr-1;er=tr+1;sc=tc+1;ec=tc+3;break;
+		case none: return;
 	}
 
-        if(sr<0)sr=0;if(er>=ROWS)er=ROWS-1;
-        if(sc<0)sc=0;if(ec>=COLS)ec=COLS-1;
+		if(sr<0)sr=0;if(er>=ROWS)er=ROWS-1;
+		if(sc<0)sc=0;if(ec>=COLS)ec=COLS-1;
 	
 	//return if the target is not in range
 	if(ar<sr||ar>er||ac<sc||ac>ec)return;
@@ -929,9 +929,9 @@ bool oneLeft(Unit *u[NUM]){
 void doTurn(Unit *u[NUM]){
 	Unit tu;
 	int m;
-    	SitRep sitRep;
-    	Action a;
-    	int hits;
+		SitRep sitRep;
+		Action a;
+		int hits;
 	int lr,lc;
 	int i,j,t,next[NUM];
 
@@ -947,15 +947,15 @@ void doTurn(Unit *u[NUM]){
 	for(i=0;i<NUM;++i){
 		m=next[i];
 		if(oneLeft(u))return;;
-        	if(u[m]&&!u[m]->getDead()){
+			if(u[m]&&!u[m]->getDead()){
 			makeB(u);
-            		sitRep=makeSitRep(u,m);
-            		int tseed=rand();  //Save the current state of rand...
+					sitRep=makeSitRep(u,m);
+					int tseed=rand();  //Save the current state of rand...
 			tu=*u[m];
-            		a=u[m]->Recommendation(sitRep);
+					a=u[m]->Recommendation(sitRep);
 			checkNoMods(u[m],tu);
-            		srand(tseed);  //...and reset it.
-            		switch(a.action){
+					srand(tseed);  //...and reset it.
+					switch(a.action){
 				case turn:
 					u[m]->Turn(a.dir);
 					break;
@@ -975,8 +975,8 @@ void doTurn(Unit *u[NUM]){
 						makeSuffer(u,m,hits);
 					break;
 				case nothing: break;
-            		}
-        	}
+					}
+			}
 	}
 	return;
 }
@@ -1011,11 +1011,11 @@ int main(){
 		// do a turn
 		++numTurns;
 		doTurn(u);	
-        	display(u);
-		cin.getline(line,1023);
+			display(u);
+		//cin.getline(line,1023);
 		cout<<sout.str();
 		sout.str("");
-        	if(line[0]=='q')done=true;
+			if(line[0]=='q')done=true;
 		if(oneLeft(u))done=true;
 	}
 	return 0;

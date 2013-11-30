@@ -5,15 +5,8 @@
 
 sideOfBoard jen::findSide (int minR,int maxR,int minC,int maxC)
 {
-	if(minR==0)
-	{
-		return bup;
-	}
-	else if(maxR==(ROWS-1))
-	{
-		return bdn;
-	}
-	else if(minC==0)
+	
+	if(minC==0)
 	{
 		return blt;
 	}
@@ -21,96 +14,201 @@ sideOfBoard jen::findSide (int minR,int maxR,int minC,int maxC)
 	{
 		return brt;
 	}
+	else if(minR==0)
+	{
+		return bup;
+	}
+	else if(maxR==(ROWS-1))
+	{
+		return bdn;
+	}
+	return bup;
 }
-void jen::upStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep)
+void jen::setRand(int minR,int maxR,int minC,int maxC, SitRep sitrep)
 {
-
+	bool done=false;
+	int tr,tc;
+	while(!done){
+		tr=minR+rand()%(maxR-minR);	
+		tc=minC+rand()%(maxC-minC);	
+		if(sitrep.thing[tr][tc].what==space)done=true;
+	}
+	/*int rdist=ROWS/2-tr;
+	int cdist=COLS/2-tc;
+	if(abs(rdist)<abs(cdist)){
+		if(cdist>0)td=rt;
+		else td=lt;
+	}else{
+		if(rdist>0)td=up;
+		else td=dn;
+	}*/
+	r=tr;
+	c=tc;
+	dir=up;
 }
-void jen::dnStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep)
+void jen::Strat(int minR,int maxR,int minC,int maxC, SitRep sitrep)
 {
+	
+	dir = lt;
+	if(rank == crown)
+	{	
+		r = ((maxR -minR)/2 + minR);
+		c = ((maxC -minC)/2 + minC);
+		return;
+	}
 
+	if(rank == knight)
+	{
+		if(sitrep.thing[(((maxR -minR)/2 + minR))+1][((maxC -minC)/2 + minC)].rank!=knight)
+		{
+			r = (((maxR -minR)/2 + minR))+1;
+			c = ((maxC -minC)/2 + minC);
+			return;
+		}		
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))-1][((maxC -minC)/2 + minC)].rank!=knight)
+		{
+			r = (((maxR -minR)/2 + minR))-1;
+			c = ((maxC -minC)/2 + minC);
+			return;
+		}
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))][(((maxC -minC)/2 + minC))+1].rank!=knight)
+		{
+			r = (((maxR -minR)/2 + minR));
+			c = (((maxC -minC)/2 + minC))+1;
+			return;
+		}
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))][(((maxC -minC)/2 + minC))-1].rank!=knight)
+		{
+			r = (((maxR -minR)/2 + minR));
+			c = (((maxC -minC)/2 + minC))-1;
+			return;
+		}
+		else
+		{
+			setRand(minR, maxR, minC, maxC, sitrep);
+			return;
+		}
+			
+
+	}
+
+	else if(rank == archer)
+	{
+		if(sitrep.thing[(((maxR -minR)/2 + minR))+1][(((maxC -minC)/2 + minC))+1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))+1;
+			c = (((maxC -minC)/2 + minC))+1;
+			return;
+		}		
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))+1][(((maxC -minC)/2 + minC))-1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))+1;
+			c = (((maxC -minC)/2 + minC))-1;
+			return;
+		}		
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))-1][(((maxC -minC)/2 + minC))-1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))-1;
+			c = (((maxC -minC)/2 + minC))-1;
+			return;
+		}
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))-1][(((maxC -minC)/2 + minC))+1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))-1;
+			c = (((maxC -minC)/2 + minC))+1;
+			return;
+		}		
+		if(sitrep.thing[(((maxR -minR)/2 + minR))+2][(((maxC -minC)/2 + minC))+1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))+2;
+			c = (((maxC -minC)/2 + minC))+1;
+			return;
+		}		
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))+2][(((maxC -minC)/2 + minC))-1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))+2;
+			c = (((maxC -minC)/2 + minC))-1;
+			return;
+		}		
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))-2][(((maxC -minC)/2 + minC))-1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))-2;
+			c = (((maxC -minC)/2 + minC))-1;
+			return;
+		}
+		else if(sitrep.thing[(((maxR -minR)/2 + minR))-2][(((maxC -minC)/2 + minC))-1].rank!=archer)
+		{
+			r = (((maxR -minR)/2 + minR))-2;
+			c = (((maxC -minC)/2 + minC))+1;
+			return;
+		}
+		else
+		{
+			setRand(minR, maxR, minC, maxC, sitrep);
+			return;
+		}
+	}
+	else if (rank==infantry)
+	{
+		sideOfBoard loca = findSide(minR, maxR, minC, maxC);
+		if(loca==brt)
+		{
+			int i, j; 
+			for(j=minC; j<maxC;j++)
+			{
+				for(i=minR; i<maxR; i++)
+				{
+					if(sitrep.thing[i][j].what==space)
+					{
+						r=i;
+						c=j;
+						return;
+					}
+				}
+			}
+		}
+		if(loca==blt)
+		{
+			int i, j; 
+			
+			for(j=maxC; j>minC;j--)
+			{
+				for(i=maxR; i>minR; i--)
+				{
+					if(sitrep.thing[i][j].what==space)
+					{
+						r=i;
+						c=j;
+						return;
+					}
+				}
+			}
+		}
+	}
 }
-void jen::rtStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep)
-{
-
-}
-void jen::ltStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep)
-{
-
-}
-
 void jen::Place(int minR,int maxR,int minC,int maxC, SitRep sitrep){
+	
 	sideOfBoard loca = findSide(minR, maxR, minC, maxC);
+	dir=up;
+	Strat(minR, maxR, minC, maxC, sitrep);
 	if(loca == bup)
 	{
-
+		dir=dn;
 	}
 	else if(loca == bdn)
 	{
-
+		dir=up;
 	}
 	else if(loca == brt)
 	{
-
+		dir=lt;
 	}
 	else if(loca == blt)
 	{
-
+		dir=rt;
 	}
-
-	if(rank==infantry)
-	{
-		if(maxC>(COLS/2)) // If on the right side of the board
-		{
-			int i;
-			for(i=0; i<20; i++) //Place the infantry in each space of the first column
-			{
-				if (minR+i<maxR)
-				{
-					sitrep.thing[minR+i][minC].rank=infantry;
-				}
-				else if (minR+i>maxR) 
-				{
-					sitrep.thing[(minR+i)-maxR][minC+1].rank=infantry;//If the first row isn't long enough for the whole infantry
-				}
-			}
-		}
-		if(maxC<(COLS/2)) //If on the left side of the board
-		{
-			int i;
-			for(i=0; i<20; i++) //Place the infantry in each space of the first column
-			{
-				if (minR+i<maxR) 
-				{
-					sitrep.thing[minR+i][maxC].rank=infantry; 
-				}
-				else if (minR+i>maxR)
-				{
-					sitrep.thing[(minR+i)-maxR][maxC-1].rank=infantry; //If the first row isn't long enough for the whole infantry
-				}
-			}
-		}
-	}
-	if(rank==crown) //Place the king
-	{
-		if(maxC<(COLS/2)) //If on the left side of the board
-		{
-			int crownRow = (maxR-minR)/2; //in the center on the back row
-			sitrep.thing[crownRow][minC];
-		}
-		else //or the right
-		{
-			int crownRow = (maxR-minR)/2; //in the center on the back row
-			sitrep.thing[crownRow][maxC];
-		}
-
-	if(rank==archer)
-	{
-
-
-	}
-
-	/*bool done=false;
+	return;
+	bool done=false;
 	int tr,tc;
 	Dir td;
 	while(!done){
@@ -129,10 +227,8 @@ void jen::Place(int minR,int maxR,int minC,int maxC, SitRep sitrep){
 	}
 	r=tr;
 	c=tc;
-	dir=td;*/
+	dir=td;
 	}
-}
-
 
 // tell someone what you want to do
 Action jen::Recommendation(SitRep sitrep)
@@ -142,14 +238,17 @@ Action jen::Recommendation(SitRep sitrep)
 	Action a; 
 
 	// first, try to attack in front of you
-	int tr=r,tc=c;
-	switch(dir)
+	if(rank==infantry)
 	{
-	case up: tr--; break;
-	case dn: tr++; break;
-	case rt: tc++; break;
-	case lt: tc--; break;
-	case none: break;
+		int tr=r,tc=c;
+		switch(dir)
+		{
+		case up: tr--; break;
+		case dn: tr++; break;
+		case rt: tc++; break;
+		case lt: tc--; break;
+		case none: break;
+		}
 	}
 	if(tr>=0&&tr<ROWS&&tc>=0&&tc<COLS)
 	{

@@ -1,14 +1,15 @@
-﻿Build started 11/29/2013 2:51:10 PM.
+﻿Build started 11/29/2013 6:55:10 PM.
      1>Project "C:\Users\jensbaby\Desktop\CS1400Final\cs1400Final\cs1400Final\cs1400Final.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\cs1400Final.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt jen.cpp lionheart.cpp
-         jen.cpp
-         Generating Code...
-     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\jen.cpp(24): warning C4715: 'jen::findSide' : not all control paths return a value
-         Skipping... (no relevant changes detected)
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt lionheart.cpp
          lionheart.cpp
+     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\lionheart.cpp(108): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\lionheart.cpp(650): warning C4101: 'tr' : unreferenced local variable
+     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\lionheart.cpp(650): warning C4101: 'tc' : unreferenced local variable
+     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\lionheart.cpp(856): warning C4101: 'j' : unreferenced local variable
+     1>c:\users\jensbaby\desktop\cs1400final\cs1400final\cs1400final\lionheart.cpp(995): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -248,4 +249,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.64
+Time Elapsed 00:00:01.85

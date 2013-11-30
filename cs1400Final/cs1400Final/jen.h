@@ -25,11 +25,7 @@ public:
 
 private:
 	sideOfBoard findSide (int minR,int maxR,int minC,int maxC);
-	void upStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
-	void dnStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
-	void rtStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
-	void ltStrat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
-
-
+	void Strat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+	void setRand(int minR,int maxR,int minC,int maxC, SitRep sitrep);
 };
 #endif
