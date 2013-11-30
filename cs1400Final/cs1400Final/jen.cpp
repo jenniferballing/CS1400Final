@@ -3,6 +3,52 @@
 #include <cmath>
 #include <iostream>
 
+Action jen::archerRange(int tc, int tr, SitRep sitrep)
+{
+	Action a;
+	switch(dir)
+		{
+		case up: tr--; break;
+		case dn: tr++; break;
+		case rt: tc++; break;
+		case lt: tc--; break;
+		case none: break;
+		}
+		if(tr>=0&&tr<ROWS&&tc>=0&&tc<COLS)
+		{
+			int i, j;
+			for(i=tr+1; i<3; i++)
+			{
+				for(j=tc-1; j<3; j++)
+				{
+					if(sitrep.thing[i][j].what==unit)
+					{
+						if(sitrep.thing[i][j].tla!=tla)
+						{
+						
+						a.action=attack;
+						a.ar=tr;
+						a.ac=tc;
+						return a;
+						}
+					}
+				}
+			}
+				
+			if(dir==sitrep.nearestEnemy.dirFor)
+			{
+				a.action=fwd;
+			}
+			else 
+			{
+				a.action=turn;
+				a.dir=sitrep.nearestEnemy.dirFor;
+			}
+		}
+	
+		return a;
+	}
+
 sideOfBoard jen::findSide (int minR,int maxR,int minC,int maxC)
 {
 	
@@ -236,21 +282,39 @@ Action jen::Recommendation(SitRep sitrep)
 	// this code is provided as an example only
 	// use at your own risk
 	Action a; 
+	int tr=r,tc=c;
+	switch(dir)
+			{
+			case up: tr--; break;
+			case dn: tr++; break;
+			case rt: tc++; break;
+			case lt: tc--; break;
+			case none: break;
+			}
 
 	// first, try to attack in front of you
-	if(rank==infantry)
+	if(rank!= archer)
 	{
-		int tr=r,tc=c;
-		switch(dir)
+		if(tr>=0&&tr<ROWS&&tc>=0&&tc<COLS)
 		{
-		case up: tr--; break;
-		case dn: tr++; break;
-		case rt: tc++; break;
-		case lt: tc--; break;
-		case none: break;
+			if(sitrep.thing[tr][tc].what==unit)
+			{
+				if(sitrep.thing[tr][tc].tla!=tla)
+				{
+					a.action=attack;
+					a.ar=tr;
+					a.ac=tc;
+					return a;
+				}
+			}
 		}
 	}
-	if(tr>=0&&tr<ROWS&&tc>=0&&tc<COLS)
+	else if(rank==archer)
+	{
+		return archerRange(tc, tr, sitrep);
+	}
+			
+	/*if(tr>=0&&tr<ROWS&&tc>=0&&tc<COLS)
 	{
 		if(sitrep.thing[tr][tc].what==unit)
 		{
@@ -262,7 +326,7 @@ Action jen::Recommendation(SitRep sitrep)
 				return a;
 			}
 		}
-	}	
+	}	*/
 	// there is not an enemy in front of me
 	// so head to the nearest enemy
 	if(dir==sitrep.nearestEnemy.dirFor)
@@ -271,7 +335,8 @@ Action jen::Recommendation(SitRep sitrep)
 		a.maxDist=1;
 		if(rank==knight||rank==crown)a.maxDist=HORSESPEED;
 		return a;
-	} else 
+	} 
+	else 
 	{
 		a.action=turn;
 		a.dir=sitrep.nearestEnemy.dirFor;

@@ -27,5 +27,6 @@ private:
 	sideOfBoard findSide (int minR,int maxR,int minC,int maxC);
 	void Strat(int minR,int maxR,int minC,int maxC, SitRep sitrep);
 	void setRand(int minR,int maxR,int minC,int maxC, SitRep sitrep);
+	Action archerRange(int tc, int tr, SitRep sitrep);
 };
 #endif
